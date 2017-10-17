@@ -1,0 +1,3 @@
+2016-08-04 16:59:05.437 [main] INFO  com.zmx.ssm.logback.LogBackTest -  日志记录
+2016-08-04 16:59:05.442 [main] WARN  com.zmx.ssm.logback.LogBackTest -  日志记录
+2016-08-04 16:59:05.443 [main] ERROR com.zmx.ssm.logback.LogBackTest -  日志记录

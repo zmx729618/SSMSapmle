@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zmx.ssm.user.domain.Order" >
+	<resultMap id="orderResultMap" type="com.zmx.ssm.user.domain.Order" >
+		<id column="o_id" property="id"/>
+		<result column="price" property="price"/>
+		<association property="user" javaType="com.zmx.ssm.user.domain.User" column="u_id">
+			<id column="u_id" property="id"/>
+			<result column="account" property="account"/>
+		    <result column="password" property="password"/>
+		</association>
+	</resultMap>
+
+	<select id="selectOrderFetchUser" parameterType="int" resultMap="orderResultMap">
+		select u.*,o.* from t_user u, t_order o where o.u_id=u.u_id and o.o_id=#{id} 
+	</select>
+
+</mapper>
